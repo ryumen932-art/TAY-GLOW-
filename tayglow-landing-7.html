@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAY GLOW • متجر رسمي | سر الأنوثة الطبيعي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --pink: #f8a5c2;
+            --rose: #e11d8a;
+        }
+        
+        body {
+            font-family: 'Cairo', system-ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .luxury-gradient {
+            background: linear-gradient(135deg, #fff1f7 0%, #ffe4f0 100%);
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .product-glow {
+            box-shadow: 0 0 40px rgba(225, 29, 138, 0.25);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        }
+        
+        .product-glow:hover {
+            transform: scale(1.03) rotate(1deg);
+            box-shadow: 0 0 60px rgba(225, 29, 138, 0.4);
+        }
+
+        .nav-active {
+            color: #e11d8a;
+            font-weight: 600;
+        }
+
+        .benefit-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(to right, #25D366, #128C7E);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgb(37 211 102 / 0.3);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgb(37 211 102 / 0.4);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(225, 29, 138, 0.5);
+        }
+
+        .feminine-bg {
+            background-image: 
+                radial-gradient(circle at 25% 30%, rgba(248, 165, 194, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 70%, rgba(225, 29, 138, 0.06) 0%, transparent 50%);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .testimonial {
+            transition: all 0.4s ease;
+        }
+
+        .marquee {
+            animation: marquee 25s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .nav-scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .premium-badge {
+            background: linear-gradient(90deg, #e11d8a, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-[#fff9fb] text-gray-800 overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="bg-white/90 backdrop-blur-lg border-b border-pink-100 sticky top-0 z-50 transition-all">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-gradient-to-br from-[#e11d8a] to-[#f472b6] rounded-2xl flex items-center justify-center shadow-inner">
+                        <span class="text-white text-3xl font-bold tracking-tighter">TG</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">TAY GLOW</span>
+                        <span class="text-[10px] font-medium text-pink-500 block -mt-1">MARQUE OFFICIELLE</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#benefits" class="hover:text-[#e11d8a] transition-colors">الفوائد</a>
+                    <a href="#results" class="hover:text-[#e11d8a] transition-colors">النتائج</a>
+                    <a href="#customers" class="hover:text-[#e11d8a] transition-colors">آراء الزبائن</a>
+                    <a href="#order" class="hover:text-[#e11d8a] transition-colors">اطلب الآن</a>
+                </div>
+
+                <!-- WhatsApp Button (Desktop) -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/212696349263?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20TAY%20GLOW%20%D8%A8%D8%B3%D8%B9%D8%B1%20170%20%D8%AF%D8%B1%D9%87%D9%85" 
+                       target="_blank"
+                       class="flex items-center gap-x-2.5 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white text-sm font-semibold rounded-3xl transition-all active:scale-[0.985]">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>تواصل عبر واتساب</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-2xl text-gray-600 hover:text-[#e11d8a]">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="luxury-gradient pt-8 pb-16 md:pt-12 md:pb-20 feminine-bg">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                
+                <!-- Hero Text -->
+                <div class="max-w-lg">
+                    <div class="inline-flex items-center gap-x-2 bg-white/70 backdrop-blur px-4 py-1.5 rounded-3xl mb-6 border border-pink-100">
+                        <div class="w-2.5 h-2.5 bg-[#e11d8a] rounded-full animate-pulse"></div>
+                        <span class="text-xs font-semibold tracking-[1.5px] text-[#e11d8a]">المنتج الأكثر مبيعاً في المغرب 2025-2026</span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-7xl leading-[1.05] font-bold tracking-tighter mb-4">
+                        اكتشفي سر<br>
+                        <span class="premium-badge">أنوثتكِ الطبيعية</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-600 mb-8 max-w-md">
+                        TAY GLOW — المكمل الطبيعي السحري الذي يمنحكِ أردافاً أكثر امتلاءً وجاذبية في أسبوعين فقط.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#order" 
+                           class="inline-flex items-center justify-center gap-x-3 bg-[#e11d8a] hover:bg-[#c01775] text-white font-semibold text-lg px-9 h-14 rounded-3xl transition-all active:scale-[0.985] shadow-xl shadow-pink-300">
+                            <span>اطلبي الآن بسعر 170 درهم</span>
+                        </a>
+                        
+                        <a href="https://wa.me/212696349263?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20TAY%20GLOW" 
+                           target="_blank"
+                           class="inline-flex items-center justify-center gap-x-3 border-2 border-[#e11d8a] text-[#e11d8a] hover:bg-pink-50 font-semibold text-lg px-8 h-14 rounded-3xl transition-all">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            <span>واتساب مباشرة</span>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-x-6 mt-8">
+                        <div class="flex -space-x-3">
+                            <div class="w-8 h-8 bg-pink-200 border-2 border-white rounded-full overflow-hidden"><img src="https://i.pravatar.cc/32?img=28" class="w-full h-full object-cover"></div>
+                            <div class="w-8 h-8 bg-pink-200 border-2 border-white rounded-full overflow-hidden"><img src="https://i.pravatar.cc/32?img=47" class="w-full h-full object-cover"></div>
+                            <div class="w-8 h-8 bg-pink-200 border-2 border-white rounded-full overflow-hidden"><img src="https://i.pravatar.cc/32?img=32" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="text-sm">
+                            <span class="font-semibold">+12,400</span> امرأة سعيدة<br>
+                            <span class="text-xs text-gray-500">في المغرب وخارجه</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Product Visual -->
+                <div class="relative flex justify-center md:justify-end">
+                    <div class="relative">
+                        <!-- Product Bottle -->
+                        <div class="product-glow w-72 h-72 md:w-[320px] md:h-[320px] bg-white rounded-[3.5rem] p-6 shadow-2xl border border-pink-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="mx-auto w-40 h-40 bg-gradient-to-br from-[#fff1f7] to-white rounded-3xl flex items-center justify-center mb-4 border border-pink-100">
+                                    <div>
+                                        <div class="text-center">
+                                            <span class="block text-6xl font-black tracking-tighter text-[#e11d8a]">TAY</span>
+                                            <span class="block -mt-3 text-5xl font-black tracking-tighter text-gray-900">GLOW</span>
+                                        </div>
+                                        <div class="mt-1 text-[10px] font-bold text-pink-500 tracking-[2px]">60 كبسولة</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-xs px-4 py-1 bg-pink-50 text-[#e11d8a] rounded-full inline-block font-semibold">
+                                    مكمل غذائي طبيعي 100%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating badges -->
+                        <div class="absolute -top-3 -right-3 bg-white shadow-xl px-4 py-2 rounded-2xl border border-pink-100 text-center">
+                            <div class="text-emerald-600 text-xs font-bold">فعال في</div>
+                            <div class="font-black text-xl -mt-1 text-emerald-600">أسبوعين</div>
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -left-4 bg-white shadow-xl px-5 py-2.5 rounded-3xl border border-pink-100">
+                            <div class="flex items-center gap-x-2">
+                                <i class="fas fa-check-circle text-emerald-500"></i>
+                                <div>
+                                    <div class="text-xs text-gray-500">موصى به من</div>
+                                    <div class="font-semibold text-sm">الأطباء</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="bg-white border-b border-pink-100 py-4">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-x-8 gap-y-4 text-sm">
+                <div class="flex items-center gap-x-2 text-gray-500">
+                    <i class="fas fa-shield-alt text-emerald-500"></i>
+                    <span class="font-medium">خالي من المواد الضارة والحافظة</span>
+                </div>
+                <div class="flex items-center gap-x-2 text-gray-500">
+                    <i class="fas fa-globe text-[#e11d8a]"></i>
+                    <span class="font-medium">شحن سريع داخل وخارج المغرب</span>
+                </div>
+                <div class="flex items-center gap-x-2 text-gray-500">
+                    <i class="fas fa-award text-amber-500"></i>
+                    <span class="font-medium">نتائج مضمونة أو استرجاع المال</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BENEFITS SECTION -->
+    <section id="benefits" class="max-w-screen-xl mx-auto px-6 pt-16 pb-12">
+        <div class="text-center mb-12">
+            <div class="text-[#e11d8a] text-xs font-bold tracking-[3px] mb-2">لماذا تاي غلو؟</div>
+            <h2 class="section-header">تعزيز أنوثتكِ بطريقة<br>طبيعية وآمنة</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Benefit 1 -->
+            <div class="benefit-card bg-white border border-pink-100 rounded-3xl p-7">
+                <div class="w-12 h-12 bg-pink-100 text-[#e11d8a] rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-magic text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">تكبير الأرداف بأقل عناء</h3>
+                <p class="text-gray-600">يساعد على منح الأرداف شكلاً أكثر امتلاءً وجاذبية بدون تمارين شاقة أو جراحة.</p>
+            </div>
+            
+            <!-- Benefit 2 -->
+            <div class="benefit-card bg-white border border-pink-100 rounded-3xl p-7">
+                <div class="w-12 h-12 bg-pink-100 text-[#e11d8a] rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-clock text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">نتائج سريعة في أسبوعين</h3>
+                <p class="text-gray-600">معظم الزبائن لاحظن فرقاً واضحاً بعد أسبوعين فقط من الاستعمال المنتظم.</p>
+            </div>
+            
+            <!-- Benefit 3 -->
+            <div class="benefit-card bg-white border border-pink-100 rounded-3xl p-7">
+                <div class="w-12 h-12 bg-pink-100 text-[#e11d8a] rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-leaf text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">تركيبة طبيعية 100%</h3>
+                <p class="text-gray-600">خالي تماماً من المواد الضارة والحافظة. آمن للاستعمال اليومي ولجميع أنواع البشرة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS / 2 WEEKS -->
+    <section id="results" class="bg-white border-y border-pink-100 py-14">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-x-8 items-center">
+                <div class="md:col-span-5 mb-10 md:mb-0">
+                    <div class="sticky top-24">
+                        <div class="text-xs font-bold text-[#e11d8a] tracking-widest mb-2">النتائج الحقيقية</div>
+                        <h2 class="text-5xl leading-none font-bold tracking-tighter mb-6">فرق واضح<br>في أسبوعين فقط</h2>
+                        
+                        <div class="space-y-4 text-gray-600">
+                            <div class="flex gap-4">
+                                <div class="font-mono text-[#e11d8a] font-bold text-xl w-6">01</div>
+                                <div>تحسن ملحوظ في شكل الأرداف والمناطق الأنثوية</div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="font-mono text-[#e11d8a] font-bold text-xl w-6">02</div>
+                                <div>شعور بثقة أكبر وأنوثة أقوى</div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="font-mono text-[#e11d8a] font-bold text-xl w-6">03</div>
+                                <div>نتائج تدوم مع الاستمرار في الاستعمال</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <div class="bg-[#fff1f7] rounded-3xl p-8 md:p-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                            <div>
+                                <div class="text-6xl font-black text-[#e11d8a]">87%</div>
+                                <div class="mt-1 text-sm font-semibold">من الزبائن لاحظن<br>نتائج في أسبوعين</div>
+                            </div>
+                            <div>
+                                <div class="text-6xl font-black text-[#e11d8a]">94%</div>
+                                <div class="mt-1 text-sm font-semibold">أوصين به لصديقاتهن</div>
+                            </div>
+                            <div>
+                                <div class="text-6xl font-black text-[#e11d8a]">4.9</div>
+                                <div class="mt-1 text-sm font-semibold">تقييم متوسط<br>من 12,400 زبونة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMERS SECTION (Special place for customers) -->
+    <section id="customers" class="max-w-screen-xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+                <div class="text-[#e11d8a] text-xs font-bold tracking-[2px]">مكان خاص بالزبائن</div>
+                <h2 class="section-header">ماذا تقول زبائننا؟</h2>
+            </div>
+            <a href="#order" class="mt-4 md:mt-0 text-sm font-semibold flex items-center gap-x-2 text-[#e11d8a]">
+                شاهدي المزيد من الشهادات <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Testimonial 1 -->
+            <div class="testimonial bg-white border border-pink-100 p-7 rounded-3xl">
+                <div class="flex gap-x-1 text-amber-400 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="italic text-gray-700">"استعملت تاي غلو لمدة 3 أسابيع والنتيجة صدمتني! أردافي أصبحت أكثر امتلاءً وشكلي أكثر أنوثة. أوصي به بشدة لكل امرأة."</p>
+                <div class="mt-6 flex items-center gap-x-3">
+                    <img src="https://i.pravatar.cc/40?img=28" class="w-9 h-9 rounded-full object-cover ring-2 ring-pink-100">
+                    <div>
+                        <div class="font-semibold">سارة المنصوري</div>
+                        <div class="text-xs text-gray-500">الدار البيضاء • 28 سنة</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial bg-white border border-pink-100 p-7 rounded-3xl">
+                <div class="flex gap-x-1 text-amber-400 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="italic text-gray-700">"جربت الكثير من المنتجات قبل تاي غلو. هذا المنتج مختلف تماماً. النتيجة طبيعية وتدريجية وما فيها أي آثار جانبية. شكراً لكم."</p>
+                <div class="mt-6 flex items-center gap-x-3">
+                    <img src="https://i.pravatar.cc/40?img=47" class="w-9 h-9 rounded-full object-cover ring-2 ring-pink-100">
+                    <div>
+                        <div class="font-semibold">لينا بنعبدالله</div>
+                        <div class="text-xs text-gray-500">مراكش • 34 سنة</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial bg-white border border-pink-100 p-7 rounded-3xl">
+                <div class="flex gap-x-1 text-amber-400 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="italic text-gray-700">"أنا من خارج المغرب ووصلني الطلب بسرعة. المنتج أعطاني الثقة اللي كنت محتاجاها. أصبحت أشعر بأنوثتي أكثر من أي وقت مضى."</p>
+                <div class="mt-6 flex items-center gap-x-3">
+                    <img src="https://i.pravatar.cc/40?img=40" class="w-9 h-9 rounded-full object-cover ring-2 ring-pink-100">
+                    <div>
+                        <div class="font-semibold">نورة التونسي</div>
+                        <div class="text-xs text-gray-500">تونس • 26 سنة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTOR / TRUST SECTION -->
+    <section class="max-w-screen-xl mx-auto px-6 pb-16">
+        <div class="bg-gradient-to-br from-white to-pink-50 border border-pink-100 rounded-3xl p-9 md:p-12">
+            <div class="grid md:grid-cols-12 gap-x-8 items-center">
+                <div class="md:col-span-7">
+                    <div class="uppercase text-xs tracking-[2px] font-bold text-[#e11d8a] mb-3">مدعوم علمياً</div>
+                    <h3 class="text-4xl font-bold tracking-tight mb-4">موصى به من قبل الأطباء</h3>
+                    <p class="text-gray-600 max-w-md">بعد دراسات وملاحظات سريرية، أوصى عدد من الأطباء بـ TAY GLOW كخيار آمن وفعال لتعزيز المناطق الأنثوية بشكل طبيعي.</p>
+                    
+                    <div class="mt-6 flex items-center gap-x-4 text-sm">
+                        <div class="px-4 py-2 bg-white rounded-2xl border text-xs font-medium">+35 طبيب</div>
+                        <div class="text-xs text-gray-500">داخل وخارج المغرب</div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 mt-8 md:mt-0">
+                    <div class="flex items-center gap-x-4">
+                        <div class="flex-1 h-px bg-pink-200"></div>
+                        <div class="text-xs font-bold px-3">سر نجلاء تاي غلو</div>
+                        <div class="flex-1 h-px bg-pink-200"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL ORDER / CTA SECTION -->
+    <section id="order" class="bg-[#e11d8a] text-white py-14">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto">
+                <div class="inline-block px-5 py-1.5 bg-white/20 text-xs font-bold tracking-widest rounded-full mb-4">الكمية محدودة جداً</div>
+                
+                <h2 class="text-5xl font-bold tracking-tighter mb-3">حان وقت تغيير أنوثتكِ</h2>
+                <p class="text-pink-100 text-xl mb-9">احصلي على TAY GLOW الآن بسعر خاص 170 درهم فقط</p>
+                
+                <!-- Price Box -->
+                <div class="inline-flex flex-col items-center bg-white text-gray-900 rounded-3xl px-14 py-7 mb-8 shadow-2xl">
+                    <div class="flex items-baseline gap-x-2">
+                        <span class="text-6xl font-black tracking-tighter">170</span>
+                        <span class="text-2xl font-semibold">درهم</span>
+                    </div>
+                    <div class="text-xs text-gray-500 -mt-1">لعلبة واحدة (60 كبسولة)</div>
+                    
+                    <div class="mt-4 text-emerald-600 text-sm font-bold flex items-center gap-x-2">
+                        <i class="fas fa-check-circle"></i> 
+                        <span>شحن مجاني داخل المغرب</span>
+                    </div>
+                </div>
+
+                <!-- WhatsApp CTA Button -->
+                <a href="https://wa.me/212696349263?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20TAY%20GLOW%20%D8%A8%D8%B3%D8%B9%D8%B1%20170%20%D8%AF%D8%B1%D9%87%D9%85.%20%D8%A7%D9%84%D9%83%D9%85%D9%8A%D8%A9%20%D9%85%D8%AD%D8%AF%D9%88%D8%AF%D8%A9%20%D9%85%D9%86%20%D9%81%D8%B6%D9%84%D9%83%D9%85%20%D8%A3%D8%B1%D8%B3%D9%84%D9%88%D8%A7%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84." 
+                   target="_blank"
+                   class="whatsapp-btn mx-auto flex items-center justify-center gap-x-4 text-white font-extrabold text-2xl w-full max-w-md h-20 rounded-3xl shadow-2xl active:scale-[0.985] transition-all">
+                    <i class="fab fa-whatsapp text-4xl"></i>
+                    <div class="text-left leading-none">
+                        <div class="font-black tracking-tight">اطلبي الآن عبر واتساب</div>
+                        <div class="text-xs font-normal tracking-widest opacity-75">+212 696 349 263</div>
+                    </div>
+                </a>
+                
+                <p class="text-xs text-pink-200 mt-6">الرد سريع • الدفع عند الاستلام متوفر • ضمان النتيجة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL TRUST -->
+    <div class="max-w-screen-xl mx-auto px-6 py-9 text-center text-xs text-gray-500">
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            <div>✓ آمن وطبيعي</div>
+            <div>✓ مناسب للنساء من 18 سنة فما فوق</div>
+            <div>✓ نتائج مضمونة</div>
+            <div>✓ دعم عملاء مخصص</div>
+        </div>
+    </div>
+
+    <footer class="border-t border-pink-100 py-8 text-xs text-center text-gray-500">
+        <div class="max-w-screen-xl mx-auto px-6">
+            TAY GLOW © 2026 • جميع الحقوق محفوظة<br>
+            هذا المنتج مكمل غذائي وليس دواءً. النتائج تختلف من شخص لآخر.
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button (Mobile) -->
+    <a href="https://wa.me/212696349263?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20TAY%20GLOW" 
+       target="_blank"
+       class="md:hidden fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl text-4xl active:scale-95 transition-all">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#e11d8a');
+        }
+        
+        // Navbar scroll effect
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled', 'shadow-sm');
+                } else {
+                    navbar.classList.remove('nav-scrolled', 'shadow-sm');
+                }
+            });
+        }
+        
+        // Mobile menu
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            if (!btn) return;
+            
+            btn.addEventListener('click', () => {
+                const menu = document.createElement('div');
+                menu.className = 'fixed inset-0 bg-black/60 z-[100] flex md:hidden';
+                menu.innerHTML = `
+                    <div class="w-4/5 max-w-xs bg-white h-full p-8">
+                        <div class="flex justify-between items-center mb-10">
+                            <span class="font-bold text-2xl">TAY GLOW</span>
+                            <button class="text-3xl text-gray-400">&times;</button>
+                        </div>
+                        <div class="flex flex-col gap-y-6 text-lg font-medium">
+                            <a href="#benefits" class="py-1">الفوائد</a>
+                            <a href="#results" class="py-1">النتائج</a>
+                            <a href="#customers" class="py-1">آراء الزبائن</a>
+                            <a href="#order" class="py-1">اطلب الآن</a>
+                            
+                            <div class="pt-6 border-t">
+                                <a href="https://wa.me/212696349263?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20TAY%20GLOW" 
+                                   target="_blank"
+                                   class="flex items-center justify-center gap-x-3 w-full bg-[#25D366] text-white py-4 rounded-3xl font-semibold">
+                                    <i class="fab fa-whatsapp text-2xl"></i>
+                                    <span>واتساب مباشرة</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(menu);
+                
+                menu.querySelector('button').onclick = () => menu.remove();
+                menu.onclick = (e) => { if (e.target === menu) menu.remove(); };
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        }
+        
+        // Fake limited stock counter (for urgency)
+        function initStockCounter() {
+            const stockEl = document.createElement('div');
+            stockEl.className = 'fixed bottom-6 left-6 z-40 hidden md:flex items-center gap-x-2 bg-white border border-pink-200 shadow px-4 py-2 rounded-2xl text-xs';
+            stockEl.innerHTML = `
+                <div class="flex items-center gap-x-2">
+                    <div class="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse"></div>
+                    <span><span class="font-bold text-red-600">47</span> قطعة متبقية فقط</span>
+                </div>
+            `;
+            document.body.appendChild(stockEl);
+            
+            // Decrease stock randomly every 45 seconds (demo only)
+            setInterval(() => {
+                const numEl = stockEl.querySelector('.font-bold');
+                if (numEl) {
+                    let current = parseInt(numEl.textContent);
+                    if (current > 12) {
+                        current--;
+                        numEl.textContent = current;
+                    }
+                }
+            }, 45000);
+        }
+        
+        // Initialize everything
+        function initializeStore() {
+            initializeTailwind();
+            initNavbar();
+            initMobileMenu();
+            initSmoothScroll();
+            initStockCounter();
+            
+            // Easter egg: click logo to scroll to top
+            const logo = document.querySelector('.fa-whatsapp') || document.querySelector('nav');
+            if (logo) {
+                logo.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            }
+            
+            console.log('%c[TAY GLOW] Landing page initialized successfully.', 'color:#e11d8a');
+        }
+        
+        window.onload = initializeStore;
+    </script>
+</body>
+</html>
